@@ -16,9 +16,10 @@ fetch("/api/transaction")
 
 function populateTotal() {
   // reduce transaction amounts to a single total value
-  let total = transactions.reduce((total, t) => {
-    return total + parseInt(t.value);
-  }, 0);
+  let total = transactions
+    .reduce((total, t) => {
+      return total + parseInt(t.value);
+    }, 0);
 
   let totalEl = document.querySelector("#total");
   totalEl.textContent = total;
@@ -87,8 +88,7 @@ function sendTransaction(isAdding) {
   if (nameEl.value === "" || amountEl.value === "") {
     errorEl.textContent = "Missing Information";
     return;
-  }
-  else {
+  } else {
     errorEl.textContent = "";
   }
 
@@ -127,8 +127,7 @@ function sendTransaction(isAdding) {
   .then(data => {
     if (data.errors) {
       errorEl.textContent = "Missing Information";
-    }
-    else {
+    } else {
       // clear form
       nameEl.value = "";
       amountEl.value = "";
