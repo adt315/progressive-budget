@@ -1,3 +1,5 @@
+const CACHE_NAME = "static-cache-vs";
+const DATA_CACHE_NAME = "data-cache-v1";
 const FILES_TO_CACHE = [
     "/",
     "/icons/icon-192x192.png",
@@ -8,9 +10,6 @@ const FILES_TO_CACHE = [
     "/manifest.webmanifest",
     "/styles.css",
 ];
-
-const CACHE_NAME = "static-cache-vs";
-const DATA_CACHE_NAME = "data-cache-v1";
 
 // install
 self.addEventListener("install", function(evt) {
